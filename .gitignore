@@ -13,6 +13,5 @@
 # testing
 /coverage
 
-# next.js
+# compiled.js
 /App
-/
