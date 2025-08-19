@@ -38,7 +38,13 @@ chmod +x /path/to/deploy.sh
 The server will listen on http://localhost:4000/webhook by default.
 
 ```bash
-npm run dev
+yarn dev
+```
+
+or build and run
+```bash
+yarn build
+yarn start
 ```
 
 ## Webhook Security
@@ -75,6 +81,25 @@ server {
 ## Reload Nginx after configuration:
 ```bash
 sudo nginx -s reload
+```
+
+## 🚀 Run with PM2
+
+PM2 is used to keep the server running in production
+
+```bash
+# Install pm2 globally
+npm install -g pm2
+or yarn global add pm2
+
+# Start the server with pm2
+pm2 start yarn --name "github-webhook-server" -- start 
+
+# Keep app alive after server 
+
+pm2 startup
+pm2 save
+
 ```
 
 # Test the Webhook & Notes
