@@ -5,8 +5,8 @@ import Util = require("util");
 
 const app = express();
 const PORT = 4000;
-const SECRET = "Jeanine-Banza_vps_secret_key";
-const SCRIPT_PATH = '/home/eruvinga/Desktop/work/Jeanine/api'
+const SECRET = "YOUR_SECRET_KEYS";
+const SCRIPT_PATH = "/PATH/TO/SHELL";
 
 // change exec function to async function
 const execAsync = Util?.promisify(childs_process?.exec);
@@ -68,11 +68,13 @@ app.post("/webhook", (req, res) => {
   //Execute script
 
   console.log("✅ Webhook vérifié, payload:", req.body);
-  //Deploy App
 
+  //Deploy App
   deploy();
   res.send("ok");
 });
+
+//YOU CAN ADD OTHER ROUTES 
 
 // listen server datas
 app.listen(PORT, () => {
